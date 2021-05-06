@@ -1,21 +1,17 @@
 <template>
-<div>
-  <h2>{{message}}</h2>
+<div id="app">
+  <router-view/>
+  <maintabbar/>
 </div>
 </template>
 
 <script>
-
+import maintabbar from 'components/content/maintabbar/maintabbar.vue'
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
-
-  },
-  data() {
-    return {
-      message: 88
-    }
+    maintabbar
   }
 }
 </script>
