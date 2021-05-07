@@ -1,10 +1,20 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+// import Vue from 'vue'
+// import VueRouter from 'vue-router'
 
-const Home = () => import('../views/home/home.vue')
-const Category = () => import('../views/category/category.vue')
-const Shopcart = () => import('../views/shopcart/shopcart.vue')
-const Profile = () => import('../views/profile/profile.vue')
+import {createRouter, createWebHistory} from 'vue-router'
+
+const routerHistory = createWebHistory()
+
+const Home = () => import('views/home/home')
+const Category = () => import('views/category/category')
+const Shopcart = () => import('views/shopcart/shopcart')
+const Profile = () => import('views/profile/profile')
+
+// 1.安装插件
+// Vue.use(VueRouter)
+// vue add VueRouter
+
+// 2.创建router
 const routes = [
   {
     path: '',
@@ -27,12 +37,11 @@ const routes = [
     component: Profile
   }
 ]
-
-Vue.use(VueRouter)
-
-const router = new VueRouter({
+const router = new createRouter({
   routes,
-  mode: 'history'
+  // mode: 'history'
+  history: routerHistory
 })
+
 
 export default router

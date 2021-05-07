@@ -2,7 +2,7 @@
   <div class = "tab-bar-item" @click="itemClick">
     <!-- 用div把slot包装起来，方便slot被替换时，某些属性不被改变 -->
     <div v-if = "!isActive"><slot name = "item-icon"></slot></div>
-    <div v-else><slot name="item-icon-active"></slot></div>
+    <div v-else><slot name = "item-icon-active"></slot></div>
     <div :style = "activeStyle">
       <slot name = "item-text"></slot>
     </div>

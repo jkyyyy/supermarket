@@ -1,7 +1,7 @@
 <template>
     <tabbar>
       <tabbaritem path = "/home" activeColor = "#d4237a">
-        <img slot = "item-icon" src="~assets/img/tabbar/home.svg">
+        <img slot = "item-icon" src="../../../assets/img/tabbar/home.svg">
         <img slot = "item-icon-active" src="~assets/img/tabbar/home_active.svg">
         <div slot = "item-text">首页</div>
       </tabbaritem>
@@ -12,7 +12,7 @@
       </tabbaritem>
       <tabbaritem path = "/cart" activeColor = "#d4237a">
         <img slot = "item-icon" src="~assets/img/tabbar/shopcart.svg">
-        <img src="~assets/img/shopcart_active.svg" slot="item-icon-active">
+        <img src="~assets/img/tabbar/shopcart_active.svg" slot="item-icon-active">
         <div slot = "item-text">购物车</div>
       </tabbaritem>
       <tabbaritem path = "/profile" activeColor = "#d4237a">
