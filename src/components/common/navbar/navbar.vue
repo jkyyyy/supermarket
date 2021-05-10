@@ -8,7 +8,7 @@
 
 <script>
 export default {
-
+  name: "navbar"
 }
 </script>
 
@@ -16,15 +16,21 @@ export default {
 .nav-bar {
   display: flex;
   height: 44px;
+  text-align: center;
+  box-shadow: 0 1px 1px rgba(100, 100, 100, .1);
 }
 
-.left .right {
+.left {
+  /* flex: 1; */
   width: 60px;
-  background-color: red;
+}
+
+.right {
+  /* flex: 1; */
+  width: 60px;
 }
 
 .center {
   flex: 1;
-  background-color: blue;
 }
 </style>
