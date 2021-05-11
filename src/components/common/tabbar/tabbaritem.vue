@@ -30,7 +30,7 @@ export default {
     path: String, 
     activeColor: {
       type: String,
-      default: '#d4237a'
+      default: '#ff5777'
     }
   },
   // 方便在控制台调试

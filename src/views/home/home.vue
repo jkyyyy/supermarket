@@ -18,6 +18,24 @@
     <li>asdf</li>
     <li>vav</li>
     <li>sadfwae</li>
+    <li>adsfawe</li><li>djd</li>
+    <li>ddf</li>
+    <li>eee</li>
+    <li>rrr</li>
+    <li>rtrtg</li>
+    <li>sdaf</li>
+    <li>asdf</li>
+    <li>vav</li>
+    <li>sadfwae</li>
+    <li>adsfawe</li><li>djd</li>
+    <li>ddf</li>
+    <li>eee</li>
+    <li>rrr</li>
+    <li>rtrtg</li>
+    <li>sdaf</li>
+    <li>asdf</li>
+    <li>vav</li>
+    <li>sadfwae</li>
     <li>adsfawe</li>
   </div>
 </template>
@@ -76,5 +94,10 @@ export default {
   right: 0;
   top: 0;
   z-index: 9;
+}
+
+.tab-control {
+  position: sticky;
+  top: 44px;
 }
 </style>
