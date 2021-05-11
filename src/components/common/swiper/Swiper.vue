@@ -1,13 +1,16 @@
 <template>
     <div id="hy-swiper">
-      <div class="swiper" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
+      <div class="swiper" @touchstart="touchStart" 
+           @touchmove="touchMove" @touchend="touchEnd">
         <slot></slot>
       </div>
       <slot name="indicator">
       </slot>
       <div class="indicator">
         <slot name="indicator" v-if="showIndicator && slideCount>1">
-          <div v-for="(item, index) in slideCount" class="indi-item" :class="{active: index === currentIndex-1}" :key="index"></div>
+          <div v-for="(item, index) in slideCount"
+               class="indi-item" :class="{active: index === currentIndex-1}"
+               :key="index"></div>
         </slot>
       </div>
     </div>
@@ -19,7 +22,7 @@
     props: {
       interval: {
 		    type: Number,
-        default: 1000
+        default: 3000
       },
       animDuration: {
 		    type: Number,
@@ -109,8 +112,10 @@
        */
       setTransform: function (position) {
         this.swiperStyle.transform = `translate3d(${position}px, 0, 0)`;
-        this.swiperStyle['-webkit-transform'] = `translate3d(${position}px), 0, 0`;
-        this.swiperStyle['-ms-transform'] = `translate3d(${position}px), 0, 0`;
+        this.swiperStyle['-webkit-transform'] = 
+          `translate3d(${position}px), 0, 0`;
+        this.swiperStyle['-ms-transform'] = 
+          `translate3d(${position}px), 0, 0`;
       },
 
       /**
@@ -170,9 +175,11 @@
         // 2.判断最终的距离
         if (this.distance === 0) {
           return
-        } else if (this.distance > 0 && currentMove > this.totalWidth * this.moveRatio) { // 右边移动超过0.5
+        } else if (this.distance > 0 && 
+            currentMove > this.totalWidth * this.moveRatio) { // 右边移动超过0.5
           this.currentIndex--
-        } else if (this.distance < 0 && currentMove > this.totalWidth * this.moveRatio) { // 向左移动超过0.5
+        } else if (this.distance < 0 && 
+            currentMove > this.totalWidth * this.moveRatio) { // 向左移动超过0.5
           this.currentIndex++
         }
 

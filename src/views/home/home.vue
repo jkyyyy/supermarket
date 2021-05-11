@@ -1,25 +1,46 @@
 <template>
-  <div id = "home">
+  <div id="home">
     <navbar class="home-nav">
       <template v-shot:left>左边</template>
       <template v-slot:center>购物街</template>
       <template v-slot:right>右you边</template>
     </navbar>
-    <homeswiper :banner="banner"></homeswiper>
+    <homeswiper :banner="banner"/>
+    <recommendview :recommend="recommend"/>
+    <featureview/>
+    <tabcontrol :title="['流行', '新款', '精选']"/>
+    <li>djd</li>
+    <li>ddf</li>
+    <li>eee</li>
+    <li>rrr</li>
+    <li>rtrtg</li>
+    <li>sdaf</li>
+    <li>asdf</li>
+    <li>vav</li>
+    <li>sadfwae</li>
+    <li>adsfawe</li>
   </div>
 </template>
 
 <script>
-import navbar from 'components/common/navbar/navbar'
-import Homeswiper from './childComps/homeswiper.vue'
+import Navbar from 'components/common/navbar/navbar'
+import Tabcontrol from 'components/content/tabcontrol/tabcontrol'
 
 import {getHomeMultidate} from 'network/home'
+
+import Recommendview from './childComps/recommendview.vue'
+import Featureview from './childComps/featureview.vue'
+import Homeswiper from './childComps/homeswiper.vue'
 
 export default {
   name: "home",
   components: {
-    navbar,
-    Homeswiper
+    Navbar,
+    Tabcontrol,
+    
+    Recommendview,
+    Featureview,
+    Homeswiper,
   },
   data() {
     return {
@@ -41,9 +62,19 @@ export default {
 </script>
 
 <style>
+#home {
+  padding-bottom: 400px;
+}
+
 .home-nav {
   /* 这个变量在base.css中定义了 */
   background-color: var(--color-tint);
   color: #fff;
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9;
 }
 </style>
