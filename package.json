@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "mockjs": "^1.1.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.6"
   },
