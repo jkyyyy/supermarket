@@ -1,6 +1,6 @@
 <template>
-  <div class="content">
-    <ul class="content1">
+  <div class="wrapper" ref="wrapper">
+    <ul class="content">
     <!-- li{分类列表$}*200 -->
     <li>分类列表1</li>
     <li>分类列表2</li>
@@ -208,6 +208,9 @@
 
 <script>
 import BScroll from '@better-scroll/core'
+import Pullup from '@better-scroll/pull-up'
+
+BScroll.use(Pullup)
 
 export default {
   name: "Category",
@@ -221,10 +224,21 @@ export default {
   // }
   //created钩子函数只是组件创建了，也渲染完了，但是DOM还没有挂载上去，这时是获取不到标签的，得写在mounted中
   mounted() {
-    this.scroll = new BScroll(document.querySelector('.content'))
+    this.scroll = new BScroll(this.$refs.wrapper, {
+    // 设置实时监听
+    // probeType:3,
+    // pullUpLoad: true
+    })
     //在vue中推荐用vue的方式操作DOM
     // this.scroll = new BScroll(this.$refs.aaaa, {
+    // })
+    //监听滚动
+    this.scroll.on('scroll', (position) => {
+      console.log(position);
+    })
 
+    // this.scroll.on('pullup', () => {
+      
     // })
   },
 }
